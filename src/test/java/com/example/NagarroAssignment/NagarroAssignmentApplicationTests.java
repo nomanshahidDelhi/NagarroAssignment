@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class NagarroAssignmentApplicationTests {
 
 	@Test
-	void contextLoads() {
-	}
+    void contextLoads() {
+    }
 
 }
