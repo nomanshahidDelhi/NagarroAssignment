@@ -1,9 +1,9 @@
 # NagarroAssignment
-Softwares Required For Project execution:
-Jdk 11
-Maven
-SonarQube(Community edition)
-Postman(Optional)/Swagger portal can be used
+Softwares Required For Project execution:  
+Jdk 11  
+Maven  
+SonarQube(Community edition)  
+Postman(Optional)/Swagger portal can be used  
 ----------------------------------------------------
 Steps to run and test the application:
 
