@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 public class StatementController {
 
-    // Injecting the service class into the controller class.
     @Autowired
     private StatementServiceImpl statementService;
 
