@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ public class StatementController {
     @Autowired
     private StatementServiceImpl statementService;
 
+    private static final Logger logger = LogManager.getLogger(StatementController.class);
+
     /**
      * It returns a list of all the statements in the database
      *
@@ -23,6 +27,7 @@ public class StatementController {
      */
     @GetMapping("/all")
     public List<Statement> getAll() {
+    	logger.info("Inside StatementController Class getAll# Method");
         return statementService.findAll();
     }
 
@@ -36,7 +41,8 @@ public class StatementController {
      */
     @GetMapping("/date/{startDate}/{endDate}")
     public List<Statement> getDateBetween(@PathVariable(value = "startDate") String fromDate, @PathVariable(value = "endDate") String toDate){
-        return statementService.getDateBetween(fromDate, toDate);
+    	logger.info("Inside StatementController Class getDateBetween# Method");
+    	return statementService.getDateBetween(fromDate, toDate);
     }
 
     /**
@@ -48,6 +54,7 @@ public class StatementController {
      */
     @GetMapping("/amount/{amount1}/{amount2}")
     public List<Statement> getAmountBetween(@PathVariable(value = "amount1") String amount1 , @PathVariable(value = "amount2") String amount2){
-        return statementService.getAmountBetween(amount1, amount2);
+    	logger.info("Inside StatementController Class getAmountBetween# Method");
+    	return statementService.getAmountBetween(amount1, amount2);
     }
 }

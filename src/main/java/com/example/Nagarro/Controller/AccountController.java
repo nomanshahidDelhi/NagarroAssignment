@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -18,9 +20,11 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
-    
+    private static final Logger logger = LogManager.getLogger(AccountController.class);
+
     @GetMapping("/all")
     public List<Account> getAllAccounts(){
+    	logger.info("Inside AccountController Class getAllAccounts# Method");
         return accountService.getAllAccounts();
     }
 
@@ -32,6 +36,7 @@ public class AccountController {
      */
     @GetMapping("/{id}")
     public Account getAccount(@PathVariable int id){
+    	logger.info("Inside AccountController Class getAccount# Method");
         return accountService.getAccount(id);
     }
 }
